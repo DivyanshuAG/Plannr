@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from register import views as v
-
+from event import views
 import month
 
 
@@ -27,4 +27,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('registration/', v.register, name="register"),
     path('month/', include('month.urls'))
+    path('create_event/', views.create_event, name='create_event')
 ]
