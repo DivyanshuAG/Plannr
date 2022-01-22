@@ -1,9 +1,8 @@
 import django
 from django.db import models
-from day.models import Day 
 from datetime import datetime
 from django.contrib.auth.models import User
-
+from day.models import Day
 from django.urls import reverse
 
 
@@ -14,8 +13,7 @@ class Event(models.Model):
     end_time = models.DateTimeField(null=True)
 
     owner_id = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-
-    dates_affected = models.ManyToManyField(Day)
+    day = models.ForeignKey(Day, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

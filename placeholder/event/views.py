@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import EventForm
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from .models import Event
 
 # def create_event(request):
@@ -21,7 +21,7 @@ from .models import Event
 
 class EventCreateView(CreateView):
     model = Event
-    fields = ['title', 'description']
+    fields = ['title', 'description', 'day']
     
     
     def form_valid(self, form):
@@ -29,10 +29,11 @@ class EventCreateView(CreateView):
         return super().form_valid(form)
 
 
-def update_event(request):
+class Update_event(UpdateView):
     # POST handler to update event
     # TODO: same as above
-    return
+    model = Event
+    fields = ['title', 'description', 'day']
 
 def remove_event(request):
     # easy shorthand to remove request of specific <int:pk>

@@ -6,8 +6,8 @@ from day.models import Day
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    fields = ('title','description', 'owner_id')
-    list_display = ('title', 'description')
+    fields = ('title','description', 'owner_id', 'day')
+    list_display = ('title', 'description', 'day')
 #admin.site.register(EventAdmin)
 
 @admin.register(Month)
