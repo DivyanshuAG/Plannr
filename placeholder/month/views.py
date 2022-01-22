@@ -28,7 +28,7 @@ def monthView(request, name):
             'dates': Day.objects.filter(month=month_object),
             'weeks': Week.objects.filter(month=month_object),
             'currentYear': datetime.now().year,
-            'pad_range': range(previous_month_object.amountOfDays - month_object.starting_date, previous_month_object.amountOfDays),
+            'pad_range': range(previous_month_object.amountOfDays - month_object.starting_date, previous_month_object.amountOfDays+1),
             'days_of_week':['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
         }
