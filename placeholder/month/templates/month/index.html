@@ -11,10 +11,26 @@
   {{ month }}
   {{ specificWeek }}
 
-  <ul>
-    {% for date in dates %}
-    <li>{{ date }}</li>
+
+    <!-- 
+    <ul>
+      {% for date in dates %}
+      <li>{{ date }}</li>
+      {% endfor %} 
+    </ul>-->
+
+
+  <table>
+    {% for week in weeks %}
+      <tr></tr>
+      {% for date in dates %}
+        {% if date.date == 7 %}
+          {% continue %}
+        {% else %}
+          {{day}}
+        {% endif %}
     {% endfor %}
-  </ul>
+    {% endfor %}
+  </table>
 </body>
 </html>
