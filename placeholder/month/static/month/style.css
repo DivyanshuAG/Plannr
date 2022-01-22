@@ -45,6 +45,7 @@ nav {
 
 
 
+
 .logo {
 	color: var(--navlinks);
 	letter-spacing: 2px;
@@ -271,9 +272,8 @@ nav {
 }
 .container h1{
 	font-size: 2rem;
-	font-family: 'Lora',serif;
 	padding-bottom: 10px;
-	text-decoration:underline;
+	text-decoration:underline dashed orange;
 }
 .container ul {
 	list-style-type: none;
@@ -295,8 +295,12 @@ nav {
 .container input:focus{
 	border-bottom: 1px solid var(--calendarcolor)
 }
-.helptext{
-	display: none;
+.helptext {
+	display: none
+}
+
+.errorlist {
+	color:red
 }
 
 .btn{

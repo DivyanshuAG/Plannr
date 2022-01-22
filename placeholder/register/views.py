@@ -5,17 +5,13 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 
 def register(response): 
+    form = RegisterForm()
     if response.method == "POST":
         form = RegisterForm(response.POST)
         if form.is_valid():
             form.save()
-            messages.success(response, "Your account has been created!")
-            return render(response, "registration/login.html", {"form": form})
-        else:
-            messages.error(response, "Invalid form entry, please try again.")
-            form = RegisterForm()
-    else:
-        form = RegisterForm()
+            messages.info(response, f"You are now logged in")
+            return redirect("main")       
 
     return render(response, "registration/register.html", {"form": form})
 
