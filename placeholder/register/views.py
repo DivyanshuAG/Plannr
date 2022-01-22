@@ -12,9 +12,9 @@ def register(response):
             form.save()
             
 
-        return render(response, "register/register.html", {"form": form})
+        return render(response, "registration/register.html", {"form": form})
     else:
         form = RegisterForm()
 
-    return render(response, "register/register.html", {"form": form})
+    return render(response, "registration/register.html", {"form": form})
 

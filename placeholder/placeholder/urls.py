@@ -24,6 +24,7 @@ import month
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', v.register, name="register"),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('registration/', v.register, name="register"),
     path('month/', include('month.urls'))
 ]
