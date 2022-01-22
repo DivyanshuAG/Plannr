@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+	--white: #fff;
 }
 /* Navbar */
 nav {
@@ -17,14 +18,14 @@ nav {
 	z-index: 1;
 }
 .logo {
-	color: #f34;
+	color: var(--white);
 	font-family: "Moon Dance", cursive;
 	letter-spacing: 2px;
 	font-size: 25px;
 }
 .logo a {
 	text-decoration: none;
-	color: #f34;
+	color: var(--white);
 }
 .nav-links {
 	display: flex;
@@ -35,7 +36,7 @@ nav {
 	list-style-type: none;
 }
 .nav-links li a {
-	color: #f34;
+	color: var(--white);
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 15px;
