@@ -1,0 +1,14 @@
+{% extends 'base_files/base.html' %}
+
+{% block content %}
+
+<div class="event-container">
+    {% for event in events %}
+    <div class="event-card">
+        <h1>{{event.title}}</h1>
+        <p>{{event.description}}</p>
+        <p class="subtle-text bottom-right">{{event.day}}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

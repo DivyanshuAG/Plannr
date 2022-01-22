@@ -177,11 +177,15 @@ nav {
 
 /* Footer */
 .footer{
+	position: sticky;
+	bottom: 0;
+	margin: 0;
 	color: #fff;
 	background: var(--calendarcolor);
 	padding: 10px 0;
 	padding-bottom: 10px;
-    height: 12vh;
+    height: 10vh;
+	width: 100%;
 }
 .social{
 	display: flex;
@@ -348,4 +352,31 @@ form input:focus {
 
 .errorlist {
 	color:red
+}
+
+.event a{
+	background-color: orange;
+	padding: 4px;
+	border-radius: 50%;
+	height: 8px;
+}
+
+.event-container {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width:95vw;
+	margin: 0;
+	overflow-x: hidden;
+	min-height: 82vh;
+}
+
+.event-card {
+	height: 200px;
+	width: 800px;
+	border: 1px solid orange;
+	margin: 20px;
+	border-radius: 25px;
+	padding: 12px;
 }
