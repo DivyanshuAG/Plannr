@@ -47,14 +47,11 @@
 
 
   <div class="calendar-container">
-      
-
-    
     {% for day_of_week in days_of_week %}
     <div class="day">{{day_of_week}}</div>
     {% endfor %}
     {% for i in pad_range %}
-    <div class="pad-day day"></div>
+    <div class="pad-day day"> {{i}}</div>
     {% endfor %}
     <!-- padding end -->
     {% for day in dates %}

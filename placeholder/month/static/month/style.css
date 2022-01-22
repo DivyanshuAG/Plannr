@@ -68,6 +68,11 @@ nav {
 	transition: all 0.3s ease;
 }
 
+.pad-day {
+	color:rgba(0, 0, 0, 0.356)
+}
+
+
 @media (max-width: 1000px) {
 	.nav-links {
 		width: 40%;
