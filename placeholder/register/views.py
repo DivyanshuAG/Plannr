@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth import authenticate, login
-
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib import messages
 
 def register(response): 
     if response.method == "POST":
@@ -16,19 +17,24 @@ def register(response):
     return render(response, "registration/register.html", {"form": form})
 
 
-def login(request): 
-    if request.method == 'post':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+def login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request=request, data=request.POST)
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password')
+        user = authenticate(username=username, password=password)
         if user is not None: 
             login(request, user)
-            return redirect("/registration/loginSuccess")
+            messages.info(request, f"You are now logged in as {username}")
+            return redirect("main")
         else:
-            return "You failed to login successfully"
-    
-    elif request.method == 'get':
-        return 
+            messages.error(request, "Invalid username or password")
+    else:
+        messages.error(request,"Invalid username or password")
+
+    form = AuthenticationForm()
+    return redirect("loginView")
+    # render(request, "registration/login.html", {"form": form})
 
 def loginSuccess(response):
     return redirect("main")
