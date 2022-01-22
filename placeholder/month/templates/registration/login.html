@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    {% load static %}
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="{% static 'month/style.css' %}">
-    <title>Login - Plannr</title>
-</head>
-
-<body>
-    <form method="POST">
-        {% csrf_token %} {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-</body>
-
-</html> 
+    <head>
+        {% load static %}
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" href="{% static 'month/style.css' %}" />
+        <title>Login - Plannr</title>
+    </head>
+    <body>
+        {% include 'includes/messages.html' %}
+        <form method="POST">
+            {% csrf_token %} {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

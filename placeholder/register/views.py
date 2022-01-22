@@ -5,15 +5,16 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 
 def register(response): 
+    form = RegisterForm()
     if response.method == "POST":
         form = RegisterForm(response.POST)
         if form.is_valid():
             form.save()
-
-        return redirect('main')
-    else:
-        form = RegisterForm()
-
+            messages.info(response, f"Account successfully created, please sign in.")
+            return redirect("loginView")
+        else:
+            messages.error(response,"Your information was invalid, please try again")
+            return render(response, "registration/register.html", {"form": form})
     return render(response, "registration/register.html", {"form": form})
 
 
@@ -34,7 +35,7 @@ def loginView(request):
             messages.error(request,"Invalid username or password")
 
     form = AuthenticationForm()
-    return render(request, "registration/login.html", {"form": form})
+    return render(request, "registration/login.html/", {"form": form})
 
 def loginSuccess(response):
     return redirect("main")
