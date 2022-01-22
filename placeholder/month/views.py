@@ -8,7 +8,7 @@ def monthView(request, name):
     if request.method == 'GET':
 
         
-        this_month= name.lower().capitalize() # standardizes the URL
+        this_month = name.lower().capitalize() # standardizes the URL
         month_object = Month.objects.get(name=this_month)
 
         # send necesary data to the template to be rendered
@@ -19,3 +19,16 @@ def monthView(request, name):
         }
     
         return render(request, template_name='month/index.html', context=data)
+
+def dayView(request, name, date):
+    if request.method == 'GET':
+
+        this_month = name.lower().capitalize()
+        month_object = Month.objects.get(name=this_month)
+
+        data = {
+            'specificDay': Day.objects.get(month=month_object, date=date),
+            'month': month_object,
+        }
+        return render(request,'month/index.html', context=data)
+        
