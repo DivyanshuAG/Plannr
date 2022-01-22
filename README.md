@@ -24,12 +24,12 @@ can also route to ``http://localhost:8000/month/july/1`` to get a specific view 
 * [x] basic template for devving
 * [x] basic admin page
 * [x] realised django templates are trash asf
-* []Event handler for the Event objects
-* []Designing the Calendar views
-* []making them reroute dynamically
-* []Automatic routing to this the current month
-* []converter from input data to Datetime objects(?)
-* []clean up the admin page
-* []make a landing page
-* []login and user authentication
-* []read / write authentication 
+* [ ]Event handler for the Event objects
+* [ ]Designing the Calendar views
+* [ ]making them reroute dynamically
+* [ ]Automatic routing to this the current month
+* [ ]converter from input data to Datetime objects(?)
+* [ ]clean up the admin page
+* [ ]make a landing page
+* [ ]login and user authentication
+* [ ]read / write authentication 
