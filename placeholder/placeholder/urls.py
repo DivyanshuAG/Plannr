@@ -26,7 +26,7 @@ import month
 urlpatterns = [
     path('', autoMonthRedirect, name='main'),
     path('admin/', admin.site.urls),
-    path('registration/', include('django.contrib.auth.urls')),
+  #  path('registration/', include('django.contrib.auth.urls')),
     path('registration/', include('register.urls')),
     path('month/', include('month.urls')),
     path('create_event/', EventCreateView.as_view(), name='create_event')
