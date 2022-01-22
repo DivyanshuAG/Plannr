@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-	--white: #fff;
+	--navlinks: #0b3053;
 }
 /* Navbar */
 nav {
@@ -10,7 +10,7 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	min-height: 8vh;
-	background-color: #000;
+	background-color: #a1d5a7;
 	font-family: "Lora", "sans-serif";
 	position: sticky;
 	top: 0;
@@ -18,15 +18,16 @@ nav {
 	z-index: 1;
 }
 .logo {
-	color: var(--white);
-	font-family: "Moon Dance", cursive;
+	color: var(--navlinks);
+	/* font-family: "Moon Dance", cursive; */
 	letter-spacing: 2px;
 	font-size: 25px;
 }
-.logo a {
+/* .logo a {
 	text-decoration: none;
-	color: var(--white);
-}
+	color: var(--navlinks);
+} */
+
 .nav-links {
 	display: flex;
 	justify-content: space-around;
@@ -36,7 +37,7 @@ nav {
 	list-style-type: none;
 }
 .nav-links li a {
-	color: var(--white);
+	color: var(--navlinks);
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 15px;
@@ -47,7 +48,7 @@ nav {
     width: 0;
     height: 2px;
     display: block;
-    background-color: #ff3344;
+    background-color: var(--navlinks);
     transition: all 0.3s ease-in-out;
 }
 .nav-links li a:hover:after{
