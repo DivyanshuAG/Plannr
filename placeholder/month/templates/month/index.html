@@ -31,11 +31,11 @@
     </div>
   </nav>
   <div class="Month">
-    <h1>{{month}} {{year}}</h1>
+    <h1>{{month}} {{currentYear}}</h1>
   </div>
   <div class="calendar-container">
     {% for day in dates %}
-    <div class="day">{{day}}</div>
+    <div class="day">{{day.date}}</div>
     {% endfor %}
   </div>
 
