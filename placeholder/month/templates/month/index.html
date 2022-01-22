@@ -64,6 +64,9 @@
     {% for day in dates %}
     <div class="day"><a href="/month/{{month}}/{{day.date}}">{{day.date}}</a></div>
     {% endfor %}
+    {% for i in over_pad_range %}
+    <div class="pad-day day"> {{i}}</div>
+    {% endfor %}
   </div>
 
   <!-- Footer -->
