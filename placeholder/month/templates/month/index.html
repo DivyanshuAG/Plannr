@@ -41,6 +41,12 @@
 
 
   <div class="calendar-container">
+    {% for day_of_week in days_of_week %}
+    <div class="day">{{day_of_week}}</div>
+    {% endfor %}
+    {% for i in pad_range %}
+    <div class="pad-day day"></div>
+    {% endfor %}
     {% for day in dates %}
     <div class="day"><a href="/month/{{month}}/{{day.date}}">{{day.date}}</a></div>
     {% endfor %}
