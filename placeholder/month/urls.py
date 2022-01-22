@@ -1,10 +1,11 @@
 from django.urls import path, include
 from . import views
+from week.views import weekView
 
 
 urlpatterns = [
-    path('/', views.monthView, name='monthView'),
-    path('/<int:week>', views.weekView, name='weekView')
+    path('<slug:name>', views.monthView, name='monthView'),
+    path('week', include('week.urls'))
 ]
 
 

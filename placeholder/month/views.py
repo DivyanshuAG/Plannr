@@ -2,9 +2,13 @@ from django.shortcuts import render
 from .models import Month
 
 # Create your views here.
-def monthView(request):
-    if request.method == 'POST':
+def monthView(request, name):
+    if request.method == 'GET':
+
+        print(name)
+
         data = {
-            'data': Month.objects.all()
+            'month': Month.objects.get(name=name.lower())
         }
-        return render(request, template_name='month/index.html', data=data)
+    
+        return render(request, template_name='month/index.html', context=data)
