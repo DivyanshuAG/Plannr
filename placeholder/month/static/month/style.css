@@ -395,3 +395,8 @@ form input:focus {
 	bottom:0;
 	right: 5px;
 }
+
+#today {
+	border: 4px solid #a1d5a7;
+	position: relative;
+}

@@ -54,9 +54,9 @@ def monthView(request, name):
             'prev_month': previous_month,
             'next_month': next_month,
             'over_pad_range': getRange(),
-            'arr_of_events' : getArrOfEventIds()
+            'arr_of_events' : getArrOfEventIds(),
+            'today': datetime.now().day
         }
-
 
         return render(request, template_name='month/index.html', context=data)
 

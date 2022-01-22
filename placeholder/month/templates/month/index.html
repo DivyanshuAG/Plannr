@@ -15,15 +15,18 @@
     <div class="pad-day day">{{i}}</div>
     {% endfor %}
     <!-- padding end -->
-    {% for day in dates %} {% if day in arr_of_events %}
-    <div class="day event">
-        <a href="/month/{{month}}/{{day.date}}">{{day.date}}</a>
-    </div>
+    {% for day in dates %} 
+    {% if day in arr_of_events and day.date == today %} 
+    <div id="today" class="day event"><a href="/month/{{month}}/{{day.date}}">{{day.date}}</a>
+    <p class="subtle bottom-right">today</p></div>
+    {% elif day in arr_of_events %}
+    <div class="day event"><a href="/month/{{month}}/{{day.date}}">{{day.date}}</a></div>
+    {% elif day.date == today %}
+    <div id="today" class="day"><a href="/month/{{month}}/{{day.date}}">{{day.date}}</a></div>
     {% else %}
-    <div class="day">
-        <a href="/month/{{month}}/{{day.date}}">{{day.date}}</a>
-    </div>
-    {% endif %} {% endfor %} {% for i in over_pad_range %}
+    <div class="day"><a href="/month/{{month}}/{{day.date}}">{{day.date}}</a></div>
+     {% endif %}      
+     {% endfor %} {% for i in over_pad_range %}
     <div class="pad-day day">{{i}}</div>
     {% endfor %}
 </div>
