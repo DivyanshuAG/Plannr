@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'month/style.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'month/style.css' %}">
 </head>
 {{specificDay}}
+
 <body>
+
+  <nav>
+    <div class="logo">
+      <a href="/">
+        <img src="{% static 'month/Plannr.svg' %}" alt="Logo" style="height: 75px;">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/#">Home</a></li>
+      <li><a href="/#fe">Features</a></li>
+      <li><a href="/#mc">My Calendar</a></li>
+      <li><a href="/#contact">Contact Us</a></li>
+    </ul>
+    <div class="menu">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
   <div class="calendar-container">
     {% for day in dates %}
     <div class="day">{{day}}</div>
     {% endfor %}
   </div>
+
+  <!-- Footer -->
+  <section class="footer" id="contact">
+    <div class="social">
+      <a href="https://github.com/DivyanshuAG/DivyanshuAG" target="_blank"><img src="{% static 'month/github.svg' %}" alt="GitHub"></a>
+    </div>
+    <p class="copyright">Copyright &copy; 2022 by Plannr</p>
+  </section>
+  <script defer src="{% static 'month/app.js' %}"></script>
+
 </body>
+
 </html>
