@@ -16,18 +16,17 @@ def register(response):
     return render(response, "registration/register.html", {"form": form})
 
 
-
 def login(request): 
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(request, username=username, password=password)
     if user is not None: 
         login(request, user)
-        return redirect("/registration/profile")
+        return redirect("/registration/loginSuccess")
     else:
         return "You failed to login successfully"
 
 
 def loginSuccess(response):
-    return redirect()
+    return redirect("main")
     
