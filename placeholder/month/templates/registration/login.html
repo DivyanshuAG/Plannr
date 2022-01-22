@@ -7,6 +7,8 @@
         <title>Login - Plannr</title>
     </head>
     <body>
+        {% include 'includes/messages.html' %}
+
         <form method="POST">
             {% csrf_token %} {{ form.as_p }}
             <button type="submit">Submit</button>
