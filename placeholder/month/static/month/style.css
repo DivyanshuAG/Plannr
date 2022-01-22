@@ -6,6 +6,7 @@
 	--navlinks: #0b3053;
 	--navbg: #a1d5a7;
 	--calendarcolor: #000;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 html {
@@ -32,15 +33,18 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 12.5vh;
+	height: 8.5vh;
 	background-color: var(--navbg);
-	font-family: "Lora", "sans-serif";
+	/* font-family: "Lora", "sans-serif"; */
 	position: sticky;
 	top: 0;
 	width: 100%;
 	z-index: 1;
     font-size: 1.15rem;
 }
+
+
+
 .logo {
 	color: var(--navlinks);
 	letter-spacing: 2px;
@@ -89,6 +93,10 @@ nav {
 
 .pad-day {
 	color:rgba(0, 0, 0, 0.356)
+}
+
+.bold {
+	font-style: bold;
 }
 
 .switch-month {
@@ -203,7 +211,7 @@ nav {
     margin-left: -1px;
     align-items: top;
     justify-content: end;
-    font-family: 'Playfair Display',serif;
+    /* font-family: 'Playfair Display',serif; */
     font-weight: bold;
     font-size: 1.15rem;
 }
@@ -238,9 +246,9 @@ nav {
 	flex-direction: column;
 }
 .Month h1{
-    font-size: 2rem;
-    font-family: 'Lora',serif;
-    text-decoration: underline;
+    font-size: 4em;
+    /* font-family: 'Lora',serif; */
+    text-decoration: dashed underline orange;
 }
 
 /* Registration and Login */

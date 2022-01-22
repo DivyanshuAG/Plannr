@@ -9,7 +9,11 @@
   <title>PLANNR</title>
   <link rel="stylesheet" href="{% static 'month/style.css' %}">
 
+
   <!-- google icons import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Akaya+Kanadaka&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -41,7 +45,7 @@
   </nav>
   <!-- Calendar -->
   <div class="Month">
-    <h1>{{month}} {{currentYear}}</h1>
+    <h1 class='month-head'>{{month}}</h1>
   </div>
     <div class="switch-month">
       <a href="/month/{{prev_month}}" class="material-icons">arrow_back_ios</a>
@@ -50,7 +54,7 @@
 
   <div class="calendar-container">
     {% for day_of_week in days_of_week %}
-    <div class="day">{{day_of_week}}</div>
+    <div class="day"><b>{{day_of_week}}</b></div>
     {% endfor %}
     {% for i in pad_range %}
     <div class="pad-day day"> {{i}}</div>
