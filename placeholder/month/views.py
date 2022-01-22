@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Month
 from day.models import Day
 from week.models import Week
@@ -32,3 +32,9 @@ def dayView(request, name, date):
         }
         return render(request,'month/index.html', context=data)
         
+def autoMonthRedirect(request):
+    month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    from datetime import datetime
+    current_month = month_names[datetime.now().month -1] 
+
+    return monthView(request, current_month)

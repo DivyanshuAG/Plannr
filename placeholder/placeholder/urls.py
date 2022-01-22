@@ -17,15 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from register import views as v
-from event import views
+from event.views import EventCreateView
+from month.views import autoMonthRedirect
 import month
 
 
 
 urlpatterns = [
+    path('', autoMonthRedirect, name='main'),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('registration/', v.register, name="register"),
-    path('month/', include('month.urls'))
-    path('create_event/', views.create_event, name='create_event')
+    path('month/', include('month.urls')),
+    path('create_event/', EventCreateView.as_view(), name='create_event')
 ]
