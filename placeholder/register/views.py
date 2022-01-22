@@ -36,8 +36,6 @@ def login(request):
     return redirect("loginView")
     # render(request, "registration/login.html", {"form": form})
 
-
-
 def loginSuccess(response):
     return redirect("main")
     
