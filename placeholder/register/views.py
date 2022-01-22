@@ -10,10 +10,14 @@ def register(response):
         form = RegisterForm(response.POST)
         if form.is_valid():
             form.save()
-            messages.info(response, f"You are now logged in")
-            return redirect("main")       
-
+            messages.info(response, f"Account successfully created, please sign in.")
+            return redirect("loginView")
+        else:
+            messages.error(response,"Your information was invalid, please try again")
+            return render(response, "registration/register.html", {"form": form})
     return render(response, "registration/register.html", {"form": form})
+
+
 
 
 def loginView(request):
@@ -33,7 +37,7 @@ def loginView(request):
             messages.error(request,"Invalid username or password")
 
     form = AuthenticationForm()
-    return render(request, "registration/login.html", {"form": form})
+    return render(request, "registration/login.html/", {"form": form})
 
 def loginSuccess(response):
     return redirect("main")
