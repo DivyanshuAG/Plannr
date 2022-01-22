@@ -17,15 +17,18 @@ def register(response):
 
 
 def login(request): 
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None: 
-        login(request, user)
-        return redirect("/registration/loginSuccess")
-    else:
-        return "You failed to login successfully"
-
+    if request.method == 'post':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None: 
+            login(request, user)
+            return redirect("/registration/loginSuccess")
+        else:
+            return "You failed to login successfully"
+    
+    elif request.method == 'get':
+        return 
 
 def loginSuccess(response):
     return redirect("main")
