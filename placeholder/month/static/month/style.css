@@ -379,4 +379,19 @@ form input:focus {
 	margin: 20px;
 	border-radius: 25px;
 	padding: 12px;
+	position: relative;
+}
+
+.center-text{
+	text-align: center;
+}
+
+.subtle-text {
+	color:rgba(0, 0, 0, 0.705)
+}
+
+.bottom-right {
+	position: absolute;
+	bottom:0;
+	right: 5px;
 }

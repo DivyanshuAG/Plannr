@@ -76,17 +76,10 @@ def dayView(request, name, date):
         }
         return render(request,'day/index.html', context=data)
 
-def inbox(request, name, date):
+def inbox(request):
     if request.method == 'GET':
 
-        this_month = name.lower().capitalize()
-        month_object = Month.objects.get(name=this_month)
-
         data = {
-            'specificDay': Day.objects.get(month=month_object, date=date),
-            'month': month_object,
-            'dates': Day.objects.filter(month=month_object),
-            'weeks': Week.objects.filter(month=month_object),
             'events': Event.objects.all()
         }
         return render(request,'day/index.html', context=data)
