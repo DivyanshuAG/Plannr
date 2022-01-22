@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'week',
     'day',
     'event',
-    'ourCalendar'
+    'ourCalendar',
+    'register'
 ]
 
 MIDDLEWARE = [
