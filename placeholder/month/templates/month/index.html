@@ -10,6 +10,11 @@
 
   {{ month }}
   {{ specificWeek }}
-  
+
+  <ul>
+    {% for date in dates %}
+    <li>{{ date }}</li>
+    {% endfor %}
+  </ul>
 </body>
 </html>
