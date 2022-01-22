@@ -5,7 +5,9 @@ from week.models import Week
 
 from datetime import datetime
 
-# Create your views here.
+month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+
 
 
 def monthView(request, name):
@@ -13,15 +15,22 @@ def monthView(request, name):
         this_month = name.lower().capitalize() # standardizes the URL
         month_object = Month.objects.get(name=this_month)
 
-        # send necesary data to the template to be rendered
+        try:
+            previous_month = month_names[month_names.index(this_month)-1]
+        except:
+            previous_month = 'December'
+
+        previous_month_object = Month.objects.get(name=previous_month)
+        
         data = {
+            # send necesary data to the template to be rendered
             'month': month_object,
             'dates': Day.objects.filter(month=month_object),
             'weeks': Week.objects.filter(month=month_object),
             'currentYear': datetime.now().year,
-            'pad_range': range(0, month_object.starting_date+1),
-            'days_of_week': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-            'months_of_the_year': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+            'pad_range': range(previous_month_object.amountOfDays - month_object.starting_date, previous_month_object.amountOfDays),
+            'days_of_week':['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
         }
 
         return render(request, template_name='month/index.html', context=data)
@@ -42,7 +51,6 @@ def dayView(request, name, date):
         return render(request,'month/index.html', context=data)
         
 def autoMonthRedirect(request):
-    month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     current_month = month_names[datetime.now().month -1] 
 
     return monthView(request, current_month)
