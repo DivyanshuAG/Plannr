@@ -24,6 +24,6 @@ import month
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', include('month.urls')),
-    path('register/', v.register, name="register")
+    path('register/', v.register, name="register"),
+    path('month/', include('month.urls'))
 ]
