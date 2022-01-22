@@ -6,9 +6,10 @@ from week.models import Week
 from datetime import datetime
 
 # Create your views here.
+
+
 def monthView(request, name):
     if request.method == 'GET':
-
         this_month = name.lower().capitalize() # standardizes the URL
         month_object = Month.objects.get(name=this_month)
 
@@ -17,10 +18,13 @@ def monthView(request, name):
             'month': month_object,
             'dates': Day.objects.filter(month=month_object),
             'weeks': Week.objects.filter(month=month_object),
-            'pad_range': range(0, month_object.starting_date ) # padding
+            'currentYear': datetime.now().year,
+            'pad_range': range(0, month_object.starting_date+1),
+            'days_of_week':['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         }
-    
+
         return render(request, template_name='month/index.html', context=data)
+
 
 def dayView(request, name, date):
     if request.method == 'GET':

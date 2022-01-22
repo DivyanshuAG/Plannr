@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'month/style.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLANNR</title>
+  <link rel="stylesheet" href="{% static 'month/style.css' %}">
 </head>
-{{specificDay}}
+
 <body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <a href="/">
+        <img src="{% static 'month/Plannr.svg' %}" alt="Logo">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/#">Home</a></li>
+      <li><a href="/#fe">Features</a></li>
+      <li><a href="/#mc">My Calendar</a></li>
+      <li><a href="/#contact" style="padding-right: 15px;">Contact Us</a></li>
+    </ul>
+    <div class="menu">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+  <!-- Calendar -->
+  <div class="Month">
+    <h1>{{month}} {{currentYear}}</h1>
+    <div class="switch-month">
+      <div class="previous"><img src="{% static 'month/previous.svg' %}" alt="previous month"></div>
+      <div class="next"><img src="{% static 'month/next.svg' %}" alt="next month"></div>
+    </div>
+  </div>
+
+
   <div class="calendar-container">
+     <!-- 
     {% for i in pad_range %}
     <div class="pad-day day"></div>
     {% endfor %}
     <!-- padding end -->
+    -->
+    {% for day_of_week in days_of_week %}
+    <div class="day">{{day_of_week}}</div>
+    {% endfor %}
+    {% for i in pad_range %}
+    <div class="pad-day day"></div>
+    {% endfor %}
     {% for day in dates %}
-    <div class="day">{{day}}</div>
+    <div class="day"><a href="/month/{{month}}/{{day.date}}">{{day.date}}</a></div>
     {% endfor %}
   </div>
+
+  <!-- Footer -->
+  <section class="footer" id="contact">
+    <div class="social">
+      <a href="https://github.com/DivyanshuAG/Plannr" target="_blank"><img src="{% static 'month/github.svg'%}"
+          alt="GitHub"></a>
+    </div>
+    <p class="copyright">Copyright &copy; 2022 by Plannr</p>
+  </section>
+  <script defer src="{% static 'month/app.js' %}"></script>
+
 </body>
+
 </html>

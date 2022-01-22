@@ -34,7 +34,7 @@ month = ['January','February','March','April','May','June', 'July', 'August', 'S
 
 
 def seed_months(remove_all_previous_entries=False):
-    """TO NOT PASS THIS 'TRUE' UNLESS YOU KNOW EXACTLY WHAY YOU ARE DOING"""
+    """TO NOT PASS THIS 'TRUE' UNLESS YOU KNOW EXACTLY WHAT YOU ARE DOING"""
 
     weekIter = 0
     dayIter = 0
