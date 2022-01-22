@@ -30,6 +30,7 @@ def monthView(request, name):
             'currentYear': datetime.now().year,
             'pad_range': range(previous_month_object.amountOfDays - month_object.starting_date, previous_month_object.amountOfDays),
             'days_of_week':['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
         }
 
         return render(request, template_name='month/index.html', context=data)
