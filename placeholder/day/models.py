@@ -4,5 +4,9 @@ from week.models import Week
 # Day Models
 
 class Day(models.Model):
+    date = models.IntegerField(default=1)
     month = models.ForeignKey(Month, on_delete=models.CASCADE)
     week = models.ForeignKey(Week, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return str(self.date) +'. of ' + str(self.month)

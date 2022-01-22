@@ -5,7 +5,7 @@ from week.views import weekView
 
 urlpatterns = [
     path('<slug:name>', views.monthView, name='monthView'),
-    path('week', include('week.urls'))
+    path('<slug:name>', include('week.urls'))
 ]
 
 

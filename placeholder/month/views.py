@@ -8,7 +8,7 @@ def monthView(request, name):
         print(name)
 
         data = {
-            'month': Month.objects.get(name=name.lower())
+            'month': Month.objects.get(name=name.lower().capitalize())
         }
     
         return render(request, template_name='month/index.html', context=data)
