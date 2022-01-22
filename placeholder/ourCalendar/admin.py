@@ -8,17 +8,17 @@ from day.models import Day
 class EventAdmin(admin.ModelAdmin):
     fields = ('title','description', 'owner_id')
     list_display = ('title', 'description')
+#admin.site.register(EventAdmin)
 
 @admin.register(Month)
 class MonthAdmin(admin.ModelAdmin):
     list_display = ('name','amountOfDays','starting_date')
+#admin.site.register(Month)
 
 @admin.register(Day)
 class DayAdmin(admin.ModelAdmin):
     list_display = ('__str__','date','month')
-
-#admin.site.register(EventAdmin)
-#admin.site.register(Month)
-admin.site.register(Week)
 #admin.site.register(Day)
+
+admin.site.register(Week)
 # Register your models here.
