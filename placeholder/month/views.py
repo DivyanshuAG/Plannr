@@ -17,7 +17,7 @@ def monthView(request, name):
             'month': month_object,
             'dates': Day.objects.filter(month=month_object),
             'weeks': Week.objects.filter(month=month_object),
-            'pad_range': range(0, month_object.starting_date )
+            'pad_range': range(0, month_object.starting_date ) # padding
         }
     
         return render(request, template_name='month/index.html', context=data)
