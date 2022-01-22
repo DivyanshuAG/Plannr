@@ -35,7 +35,7 @@ nav {
 	align-items: center;
 	height: 8.5vh;
 	background-color: var(--navbg);
-	/* font-family: "Lora", "sans-serif"; */
+	font-family: "Lora", "sans-serif";
 	position: sticky;
 	top: 0;
 	width: 100%;
