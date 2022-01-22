@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 
@@ -37,6 +37,10 @@ def loginView(request):
     form = AuthenticationForm()
     return render(request, "registration/login.html/", {"form": form})
 
-def loginSuccess(response):
-    return redirect("main")
-    
+def logoutView(response):
+    if response.method == "GET":
+        logout(response)
+        messages.success(response,"You have been successfully logged out")
+        return redirect('loginView')
+    return redirect(response, 'loginView')
+
