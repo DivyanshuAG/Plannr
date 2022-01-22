@@ -299,9 +299,7 @@ nav {
 	display: none
 }
 
-.errorlist {
-	color:red
-}
+
 
 .btn{
 	display: inline-block;
@@ -312,4 +310,42 @@ nav {
 	border: none;
 	border-radius: 5px;
 	margin: 10px 190px;
+}
+
+/* submit button an animation */
+
+.submit-btn {
+	background-color: orange;
+	color: black;
+	padding: 10px 30px;
+	border-radius: 12px;
+	display: inline-block;
+	margin: 10px 190px;
+	border: none;
+	transition: all;
+}
+
+.submit-btn:hover {
+	background-image: linear-gradient(130deg, orange 60% , orangered);
+    background-size: 200% 200%;
+	animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient { 
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+
+ul:first-of-type {
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 12px;
+}
+
+form input:focus {
+	border: 2px solid orange
+}
+
+.errorlist {
+	color:red
 }
