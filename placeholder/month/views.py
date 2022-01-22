@@ -20,7 +20,8 @@ def monthView(request, name):
             'weeks': Week.objects.filter(month=month_object),
             'currentYear': datetime.now().year,
             'pad_range': range(0, month_object.starting_date+1),
-            'days_of_week':['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            'days_of_week': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            'months_of_the_year': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         }
 
         return render(request, template_name='month/index.html', context=data)

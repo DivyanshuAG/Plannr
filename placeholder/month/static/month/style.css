@@ -5,7 +5,28 @@
     box-sizing: border-box;
 	--navlinks: #0b3053;
 	--navbg: #a1d5a7;
+	--calendarcolor: #000;
 }
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{
+	width: .625em;
+}
+::-webkit-scrollbar-track{
+	margin-block: 0.15em;
+}
+::-webkit-scrollbar-thumb{
+	background: #808080;
+	border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover{
+	background: #5c5858;
+}
+
 /* Navbar */
 nav {
 	display: flex;
@@ -127,7 +148,7 @@ nav {
 /* Footer */
 .footer{
 	color: #fff;
-	background: #000;
+	background: var(--calendarcolor);
 	padding: 10px 0;
 	padding-bottom: 10px;
     height: 12vh;
@@ -167,7 +188,20 @@ nav {
 }
 .day a{
     text-decoration: none;
-    color: #000;
+    color: var(--calendarcolor);
+	display: inline-block;
+}
+.day a::after{
+	content: "";
+    width: 0;
+    height: 2px;
+    display: block;
+    background-color: var(--calendarcolor);
+    transition: all 0.1s ease-in-out;
+}
+.day a:hover::after{
+	width: 100%;
+	cursor: pointer;
 }
 .calendar-container {
     display: grid;
