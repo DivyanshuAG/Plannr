@@ -20,6 +20,11 @@ def monthView(request, name):
         except:
             previous_month = 'December'
 
+        try:
+            next_month = month_names[month_names.index(this_month)+1]
+        except:
+            next_month = 'January'
+
         previous_month_object = Month.objects.get(name=previous_month)
         
         data = {
@@ -29,7 +34,9 @@ def monthView(request, name):
             'weeks': Week.objects.filter(month=month_object),
             'currentYear': datetime.now().year,
             'pad_range': range(previous_month_object.amountOfDays - month_object.starting_date, previous_month_object.amountOfDays+1),
-            'days_of_week':['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            'days_of_week':['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            'prev_month': previous_month,
+            'next_month': next_month
 
         }
 

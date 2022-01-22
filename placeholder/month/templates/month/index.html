@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PLANNR</title>
   <link rel="stylesheet" href="{% static 'month/style.css' %}">
+
+  <!-- google icons import -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -39,10 +42,10 @@
   <!-- Calendar -->
   <div class="Month">
     <h1>{{month}} {{currentYear}}</h1>
+  </div>
     <div class="switch-month">
-      <div class="previous"><img src="{% static 'month/previous.svg' %}" alt="previous month"></div>
-      <div class="next"><img src="{% static 'month/next.svg' %}" alt="next month"></div>
-    </div>
+      <a href="/month/{{prev_month}}" class="material-icons">arrow_back_ios</a>
+      <a href="/month/{{next_month}}" class="material-icons">arrow_forward_ios</a>
   </div>
 
 

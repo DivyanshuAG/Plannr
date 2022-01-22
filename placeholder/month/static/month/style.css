@@ -93,6 +93,24 @@ nav {
 	color:rgba(0, 0, 0, 0.356)
 }
 
+.switch-month {
+	display: flex;
+	justify-content: center;
+}
+
+.switch-month a {
+	text-decoration: none;
+	color:black;
+	margin: 6px;
+	transition: ease-out 1.7s
+}
+
+.switch-month a:hover {
+	color: orange;
+	transition: ease-out 0.7s;
+	transform: scale(1.1);
+}
+
 
 @media (max-width: 1000px) {
 	.nav-links {
@@ -227,9 +245,9 @@ nav {
     text-decoration: underline;
 }
 
-/* Switch Month */
+/* Switch Month
 .switch-month{
 	display: flex;
 	flex-direction: row;
 	align-self: start;
-}
+} */
