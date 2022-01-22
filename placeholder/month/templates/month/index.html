@@ -11,11 +11,11 @@
 </head>
 
 <body>
-
+  <!-- Navbar -->
   <nav>
     <div class="logo">
       <a href="/">
-        <img src="{% static 'month/Plannr.svg' %}" alt="Logo" style="height: 75px;">
+        <img src="{% static 'month/Plannr.svg' %}" alt="Logo">
       </a>
     </div>
     <ul class="nav-links">
@@ -30,9 +30,16 @@
       <div class="line3"></div>
     </div>
   </nav>
+  <!-- Calendar -->
   <div class="Month">
     <h1>{{month}} {{currentYear}}</h1>
+    <div class="switch-month">
+      <div class="previous"><img src="{% static 'month/previous.svg' %}" alt="previous month"></div>
+      <div class="next"><img src="{% static 'month/next.svg' %}" alt="next month"></div>
+    </div>
   </div>
+
+
   <div class="calendar-container">
     {% for day in dates %}
     <div class="day"><a href="/month/{{month}}/{{day.date}}">{{day.date}}</a></div>
@@ -42,7 +49,8 @@
   <!-- Footer -->
   <section class="footer" id="contact">
     <div class="social">
-      <a href="https://github.com/DivyanshuAG/Plannr" target="_blank"><img src="{% static 'month/github.svg' %}" alt="GitHub"></a>
+      <a href="https://github.com/DivyanshuAG/Plannr" target="_blank"><img src="{% static 'month/github.svg'%}"
+          alt="GitHub"></a>
     </div>
     <p class="copyright">Copyright &copy; 2022 by Plannr</p>
   </section>

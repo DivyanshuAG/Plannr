@@ -11,7 +11,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 13vh;
+	height: 12.5vh;
 	background-color: var(--navbg);
 	font-family: "Lora", "sans-serif";
 	position: sticky;
@@ -28,6 +28,9 @@ nav {
 	font-size: 25px;
 	padding-left: 25px;
 	padding-top: 5px;
+}
+.logo img{
+	height: 75px;
 }
 .nav-links {
 	display: flex;
@@ -173,13 +176,21 @@ nav {
 }
 
 .Month{
-    height: 11vh;
+    height: 11.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
+	flex-direction: column;
 }
 .Month h1{
     font-size: 2rem;
     font-family: 'Lora',serif;
     text-decoration: underline;
+}
+
+/* Switch Month */
+.switch-month{
+	display: flex;
+	flex-direction: row;
+	align-self: start;
 }
