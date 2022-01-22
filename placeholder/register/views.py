@@ -9,8 +9,11 @@ def register(response):
         form = RegisterForm(response.POST)
         if form.is_valid():
             form.save()
-
-        return render(response, "registration/register.html", {"form": form})
+            messages.success(response, "Your account has been created!")
+            return render(response, "registration/login.html", {"form": form})
+        else:
+            messages.error(response, "Invalid form entry, please try again.")
+            form = RegisterForm()
     else:
         form = RegisterForm()
 
