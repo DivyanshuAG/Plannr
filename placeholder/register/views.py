@@ -17,24 +17,24 @@ def register(response):
     return render(response, "registration/register.html", {"form": form})
 
 
-def login(request):
+def loginView(request):
     if request.method == 'POST':
         form = AuthenticationForm(request=request, data=request.POST)
-        username = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('password')
-        user = authenticate(username=username, password=password)
-        if user is not None: 
-            login(request, user)
-            messages.info(request, f"You are now logged in as {username}")
-            return redirect("main")
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None: 
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}")
+                return redirect("main")
+            else:
+                messages.error(request, "Invalid username or password")
         else:
-            messages.error(request, "Invalid username or password")
-    else:
-        messages.error(request,"Invalid username or password")
+            messages.error(request,"Invalid username or password")
 
     form = AuthenticationForm()
-    return redirect("loginView")
-    # render(request, "registration/login.html", {"form": form})
+    return render(request, "registration/login.html", {"form": form})
 
 def loginSuccess(response):
     return redirect("main")
