@@ -29,7 +29,6 @@ def monthView(request, name):
         
         def getRange():
             remainder = month_object.amountOfDays % 7
-            #print(remainder)
             if not remainder and month_object.starting_date == 0:
                 return 0
             n = len(range(previous_month_object.amountOfDays - month_object.starting_date, previous_month_object.amountOfDays+1)) + month_object.amountOfDays

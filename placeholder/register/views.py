@@ -18,8 +18,6 @@ def register(response):
     return render(response, "registration/register.html", {"form": form})
 
 
-
-
 def loginView(request):
     if request.method == 'POST':
         form = AuthenticationForm(request=request, data=request.POST)
