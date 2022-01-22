@@ -24,8 +24,8 @@ import month
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('registration/', v.register, name="register"),
-    path('month/', include('month.urls'))
+    path('registration/', include('django.contrib.auth.urls')),
+    path('registration/', include('register.urls')),
+    path('month/', include('month.urls')),
     path('create_event/', views.create_event, name='create_event')
 ]
