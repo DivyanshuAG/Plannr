@@ -15,15 +15,10 @@
             <h1>Plannr - Sign Up</h1>
             <form method="POST">
                 {% csrf_token %} {{ form.as_p }}
-                <!-- <input type="text" name="username" id="">
-               <input type="email" name="email" id="">
-                <input type="password" name="password1" id="">
-                <input type="password" name="password2" id="">-->
                 <button type="submit" id='gradient' class="submit-btn">Register</button>
-                <p>Already have an account? <a href="{% url 'loginView' %}">login here</a></p>
             </form>
             <div class="not">
-                Already registered? <a href="/registration/login/?next=/"><i>Log In</i></a>
+                Already registered? <a href="{% url 'loginView' %}"><i>Log In</i></a>
             </div>
     
         </div>

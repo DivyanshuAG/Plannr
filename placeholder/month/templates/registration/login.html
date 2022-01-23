@@ -16,10 +16,9 @@
         <form method="POST">
             {% csrf_token %} {{ form.as_p }}
             <button type="submit" class="submit-btn">Login</button>
-            <p>Don't have an account? <a href="{% url 'registerView' %}">register now!</a></p>
         </form>
         <div class="not">
-            Not Registered? <a href="/registration"><i>Register Now</i></a>
+            Not Registered? <a href="{% url 'registerView' %}"><i>Register Now</i></a>
         </div>
     </div>
 </body>
