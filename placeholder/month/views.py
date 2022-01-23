@@ -86,7 +86,8 @@ def inbox(request):
     if request.method == 'GET':
 
         data = {
-            'events': Event.objects.all()
+            'events': Event.objects.all(),
+            'currentYear': datetime.now().year
         }
         return render(request,'day/index.html', context=data)
         
