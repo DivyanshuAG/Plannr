@@ -8,6 +8,9 @@
         <h1 class='center-text'>{{event.title}}</h1>
         <p>{{event.description}}</p>
         <p class="subtle-text bottom-right">{{event.day.date}} {{month}} {{currentYear}}</p>
+        {% if event.start_time and event.end_time%}
+        <p class="subtle">{{event.start_time}} - {{event.end_time}}</p>
+        {% endif %}
     </div>
     {% endfor %}
 </div>
