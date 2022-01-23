@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .forms import EventForm
 from django.views.generic import CreateView, UpdateView
 from .models import Event
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # def create_event(request):
 #     # POST handler to create a new event
@@ -19,19 +21,20 @@ from .models import Event
 #     else:
 #         return render(request, "event/index.html", {"form": form})
 
-class EventCreateView(CreateView):
+class EventCreateView(LoginRequiredMixin, CreateView):
     model = Event
     fields = ['title', 'description', 'day', 'start_time', 'end_time']
-    
+    login_url = '/registration/login'
     
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
 
-class Update_event(UpdateView):
+class Update_event(LoginRequiredMixin, UpdateView):
     # POST handler to update event
     # TODO: same as above
+    login_url = '/registration/login'
     model = Event
     fields = ['title', 'description', 'day']
 
