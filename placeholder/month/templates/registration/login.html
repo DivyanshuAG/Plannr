@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% load static %}
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="stylesheet" href="{% static 'month/style.css' %}" />
-        <title>Login - Plannr</title>
-    </head>
-    <body>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="{% static 'month/style.css' %}" />
+    <title>Login - Plannr</title>
+</head>
+
+<body class="gradient">
+    <div class="container" style="width: fit-content; padding:60px 100px;">
+        <h1>Planner - Login</h1>
         {% include 'includes/messages.html' %}
         <form method="POST">
             {% csrf_token %} {{ form.as_p }}
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
-    </body>
+    </div>
+</body>
+
 </html>

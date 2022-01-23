@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Playfair+Display:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Poppins:wght@300&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 	--navlinks: #0b3053;
 	--navbg: #a1d5a7;
 	--calendarcolor: #000;
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -262,22 +263,27 @@ nav {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin: 20vh auto;
-	width: fit-content;
-	padding: 20px;
-	font-family: Arial, Helvetica, sans-serif;
-	border: 1px solid var(--calendarcolor);
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
 	border-radius: 10px;
 	box-shadow: 10px 10px 14px -1px rgba(0,0,0,0.5);
 	-webkit-box-shadow: 10px 10px 14px -1px rgba(0,0,0,0.5);
 	-moz-box-shadow: 10px 10px 14px -1px rgba(0,0,0,0.5);
 	background-color: #ffffff;
-
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: fit-content;
+	height: fit-content;
 }
 .container h1{
 	font-size: 2rem;
 	padding-bottom: 10px;
-	text-decoration:underline dashed orange;
+	text-decoration:underline dashed #047aed;
+	font-family: 'Lora',serif;
 }
 .container ul {
 	list-style-type: none;
@@ -319,8 +325,8 @@ nav {
 /* submit button an animation */
 
 .submit-btn {
-	background-color: orange;
-	color: black;
+	background-color: #047aed;
+	color: #ffffff;
 	padding: 10px 30px;
 	border-radius: 12px;
 	display: inline-block;
@@ -330,9 +336,9 @@ nav {
 }
 
 .submit-btn:hover {
-	background-image: linear-gradient(130deg, orange 60% , orangered);
+	background-image: linear-gradient(130deg, #047aed 60% , #3fdde2c0);
     background-size: 200% 200%;
-	animation: gradient 5s ease infinite;
+	animation: gradient 2s ease infinite;
 }
 
 @keyframes gradient { 
@@ -347,7 +353,7 @@ ul:first-of-type {
 }
 
 form input:focus {
-	border: 2px solid orange
+	border-bottom: 2px solid orange;
 }
 
 .errorlist {
@@ -403,4 +409,11 @@ form input:focus {
 
 .alert {
 	margin:0 !important;
+}
+.gradient{
+	background: #0a576b;
+	/* background: -moz-linear-gradient(-45deg,  #0a576b 0%, #047aed 47%, #7db9e8 100%); 
+	background: -webkit-linear-gradient(-45deg,  #0a576b 0%,#047aed 47%,#7db9e8 100%); 
+	background: linear-gradient(135deg,  #0a576b 0%,#047aed 47%,#7db9e8 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a576b', endColorstr='#7db9e8',GradientType=1 ); */
 }

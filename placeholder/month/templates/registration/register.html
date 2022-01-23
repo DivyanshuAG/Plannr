@@ -9,10 +9,10 @@
         <title>Register - Plannr</title>
     </head>
 
-    <body style="background-color: #047aed">
+    <body  class="gradient">
         {% include 'includes/messages.html' %}
-        <div class="container">
-            <h1>Plannr</h1>
+        <div class="container" style="padding: 30px 100px; width:fit-content; height:fit-content;">
+            <h1>Plannr - Sign Up</h1>
             <form method="POST">
                 {% csrf_token %} {{ form.as_p }}
                 <!-- <input type="text" name="username" id="">
