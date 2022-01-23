@@ -40,6 +40,12 @@ def monthView(request, name):
                 r.append(event.day)
 
             return r
+
+        def ReturnTodayIfCurrentMonth(current_month):
+            if current_month == month_names[datetime.now().month -1]:
+                return datetime.now().day
+            return None
+
         data = {
             # send necesary data to the template to be rendered
             'month': month_object,
@@ -52,7 +58,7 @@ def monthView(request, name):
             'next_month': next_month,
             'over_pad_range': getRange(),
             'arr_of_events' : getArrOfEventIds(),
-            'today': datetime.now().day
+            'today': ReturnTodayIfCurrentMonth(this_month)
         }
 
         return render(request, template_name='month/index.html', context=data)
@@ -69,7 +75,8 @@ def dayView(request, name, date):
             'month': month_object,
             'dates': Day.objects.filter(month=month_object),
             'weeks': Week.objects.filter(month=month_object),
-            'events': Event.objects.filter(day=date)
+            'events': Event.objects.filter(day=date),
+            'currentYear': datetime.now().year
         }
         return render(request,'day/index.html', context=data)
 

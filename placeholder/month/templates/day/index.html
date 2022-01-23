@@ -7,8 +7,7 @@
     <div class="event-card">
         <h1 class='center-text'>{{event.title}}</h1>
         <p>{{event.description}}</p>
-        <!-- TODO: Add pass event.month and event.year as dynamic -->
-        <p class="subtle-text bottom-right">{{event.day.date}}/{{event.month}}/{{event.year}}</p>
+        <p class="subtle-text bottom-right">{{event.day.date}}/{{month}}/{{currentYear}}</p>
     </div>
     {% endfor %}
 </div>
