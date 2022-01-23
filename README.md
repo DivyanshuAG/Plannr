@@ -24,6 +24,14 @@ Install dependencies
   pip install django
 ```
 
+Migrate Django
+
+```bash
+  python manage.py shell
+  from seeder import seed_months
+  seed_months()
+```
+
 Start the server
 
 ```bash
