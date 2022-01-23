@@ -15,9 +15,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
-	width:100vw
-}
+
 
 /* Scrollbar */
 ::-webkit-scrollbar{
@@ -211,7 +209,6 @@ nav {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto;
     height: 64vh;
-	width: 100vw;
 }
 
 .Month{
