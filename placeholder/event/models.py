@@ -12,7 +12,7 @@ class Event(models.Model):
     start_time = models.TimeField(null=True)
     end_time = models.TimeField(null=True)
 
-    owner_id = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    owner_id = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     day = models.ForeignKey(Day, on_delete=models.CASCADE)
 
     def __str__(self):
