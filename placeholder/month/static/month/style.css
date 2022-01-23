@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Poppins:wght@400&display=swap');
 
 *{
     margin: 0;
@@ -7,6 +7,7 @@
 	--navlinks: #0b3053;
 	--navbg: #a1d5a7;
 	--calendarcolor: #000;
+	--main-color: #0a576b;
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -217,7 +218,6 @@ nav {
     margin-left: -1px;
     align-items: top;
     justify-content: end;
-    /* font-family: 'Playfair Display',serif; */
     font-weight: bold;
     font-size: 1.15rem;
 }
@@ -253,8 +253,8 @@ nav {
 }
 .Month h1{
     font-size: 4em;
-    /* font-family: 'Lora',serif; */
-    text-decoration: dashed underline orange;
+    font-family: 'Lora',serif;
+    text-decoration: dashed underline #047aed;
 }
 
 /* Registration and Login */
@@ -305,11 +305,14 @@ nav {
 .container input:focus{
 	border-bottom: 1px solid var(--calendarcolor)
 }
+
+.container textarea{
+	outline: none;	
+}
+
 .helptext {
 	display: none
 }
-
-
 
 .btn{
 	display: inline-block;
@@ -330,7 +333,7 @@ nav {
 	padding: 10px 30px;
 	border-radius: 12px;
 	display: inline-block;
-	margin: 10px 190px;
+	margin: 10px 200px;
 	border: none;
 	transition: all;
 }
@@ -411,5 +414,5 @@ form input:focus {
 	margin:0 !important;
 }
 .gradient{
-	background: #0a576b;
+	background: var(--main-color);
 }

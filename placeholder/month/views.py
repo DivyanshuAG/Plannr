@@ -8,9 +8,6 @@ from datetime import datetime
 
 month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-
-
-
 def monthView(request, name):
     if request.method == 'GET':
         this_month = name.lower().capitalize() # standardizes the URL
