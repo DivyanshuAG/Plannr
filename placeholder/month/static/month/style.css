@@ -400,3 +400,7 @@ form input:focus {
 	border: 4px solid #a1d5a7;
 	position: relative;
 }
+
+.alert {
+	margin:0 !important;
+}
