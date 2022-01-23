@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if events %}
 <div class="event-container">
     {% for event in events %}
     <div class="event-card">
@@ -18,4 +19,13 @@
     </div>
     {% endfor %}
 </div>
+{% else %}
+<div class="exception-container">
+    <h1 class="error">404</h1>
+    <p>Woopsie doopsie, you have no event for this day!</p>
+    <i>Don't worry, it's okay =)</i>
+</div>
+
+{% endif %}
+
 {% endblock %}
