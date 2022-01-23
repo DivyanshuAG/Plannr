@@ -36,7 +36,7 @@
       <li><a href="{% url 'inbox' %}" class="material-icons">upcoming</a></li>
       <li><a href="{% url 'main' %}" class="material-icons">calendar_month</a></li>
       <li><a href="{% url 'create_event' %}" class="material-icons">edit_calendar</a></li>
-      <li><span> {{ user.username }} </span><a href="{% url 'logout' %}" class="material-icons">logout</a></li>
+      <li><span class="username"> {{ user.username }} </span><a href="{% url 'logout' %}" class="material-icons">logout</a></li>
     </ul>
     <div class="menu">
       <div class="line1"></div>
