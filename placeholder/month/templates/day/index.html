@@ -10,7 +10,7 @@
         {% if month %}
         <p class="subtle-text bottom-right">{{event.day.date}} {{month}} {{currentYear}}</p>
         {% else %}
-        <p class="subtle-text bottom-right">{{event.day}}</p>
+        <p class="subtle-text bottom-right">{{event.day.date}} {{event.day.month}} {{currentYear}}</p>
         {% endif %}
         {% if event.start_time and event.end_time%}
         <p class="subtle">{{event.start_time}} - {{event.end_time}}</p>
