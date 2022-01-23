@@ -45,9 +45,6 @@ nav {
     font-size: 1.15rem;
 }
 
-
-
-
 .logo {
 	color: var(--navlinks);
 	letter-spacing: 2px;
@@ -56,7 +53,7 @@ nav {
 	padding-top: 5px;
 }
 .logo svg{
-	height: 75px;
+	height: 50px;
 }
 .nav-links {
 	display: flex;
@@ -186,7 +183,7 @@ nav {
 	background: var(--calendarcolor);
 	padding: 10px 0;
 	padding-bottom: 10px;
-    height: 10vh;
+    height: 12vh;
 	width: 100%;
 }
 .social{
@@ -375,21 +372,35 @@ form input:focus {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	width:95vw;
-	margin: 0;
+	width:100%;
+	margin: 0 auto;
 	overflow-x: hidden;
 	min-height: 82vh;
+	background: var(--main-color);
 }
 
 .event-card {
 	height: 200px;
-	width: 800px;
-	border: 1px solid orange;
+	width: 60%;
+	background: white;
 	margin: 20px;
 	border-radius: 25px;
 	padding: 12px;
 	position: relative;
+	box-shadow: 10px 10px 14px -1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 10px 10px 14px -1px rgba(0,0,0,0.5);
+	-moz-box-shadow: 10px 10px 14px -1px rgba(0,0,0,0.5);
+
 }
+.event-card h1{
+	font-family: 'Lora', serif;
+	text-decoration: dashed underline var(--main-color);
+}
+
+.event-card p{
+	font-size: 1.15em;
+}
+
 
 .center-text{
 	text-align: center;
