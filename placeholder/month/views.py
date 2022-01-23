@@ -11,7 +11,7 @@ from datetime import datetime
 
 month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-@login_required(login_url='/registration/login/')
+@login_required(login_url='/registration/login')
 def monthView(request, name):
     if request.method == 'GET':
         this_month = name.lower().capitalize() # standardizes the URL
@@ -67,7 +67,7 @@ def monthView(request, name):
 
         return render(request, template_name='month/index.html', context=data)
 
-@login_required(login_url='/registration/login/')
+@login_required(login_url='/registration/login')
 def dayView(request, name, date):
     if request.method == 'GET':
 
@@ -85,8 +85,8 @@ def dayView(request, name, date):
             'currentYear': datetime.now().year
         }
         return render(request,'day/index.html', context=data)
-        
-@login_required(login_url='/registration/login/')
+
+@login_required(login_url='/registration/login')
 def inbox(request):
     if request.method == 'GET':
 
@@ -96,7 +96,8 @@ def inbox(request):
         }
         return render(request,'day/index.html', context=data)
 
-@login_required(login_url='/registration/login/')      
+        
+@login_required(login_url='/registration/login')     
 def autoMonthRedirect(request):
     current_month = month_names[datetime.now().month -1] 
 
