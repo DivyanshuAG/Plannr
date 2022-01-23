@@ -412,8 +412,4 @@ form input:focus {
 }
 .gradient{
 	background: #0a576b;
-	/* background: -moz-linear-gradient(-45deg,  #0a576b 0%, #047aed 47%, #7db9e8 100%); 
-	background: -webkit-linear-gradient(-45deg,  #0a576b 0%,#047aed 47%,#7db9e8 100%); 
-	background: linear-gradient(135deg,  #0a576b 0%,#047aed 47%,#7db9e8 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a576b', endColorstr='#7db9e8',GradientType=1 ); */
 }
