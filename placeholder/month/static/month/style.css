@@ -305,6 +305,7 @@ nav {
 
 .container textarea{
 	outline: none;	
+	resize: none;
 }
 
 .helptext {
@@ -400,7 +401,6 @@ form input:focus {
 .event-card p{
 	font-size: 1.15em;
 }
-
 
 .center-text{
 	text-align: center;
