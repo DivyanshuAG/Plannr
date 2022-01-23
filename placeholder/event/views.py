@@ -21,7 +21,7 @@ from .models import Event
 
 class EventCreateView(CreateView):
     model = Event
-    fields = ['title', 'description', 'day']
+    fields = ['title', 'description', 'day', 'start_time', 'end_time']
     
     
     def form_valid(self, form):

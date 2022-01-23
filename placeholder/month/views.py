@@ -70,12 +70,14 @@ def dayView(request, name, date):
         this_month = name.lower().capitalize()
         month_object = Month.objects.get(name=this_month)
 
+        today = Day.objects.get(month=month_object, date=date)
+
         data = {
             'specificDay': Day.objects.get(month=month_object, date=date),
             'month': month_object,
             'dates': Day.objects.filter(month=month_object),
             'weeks': Week.objects.filter(month=month_object),
-            'events': Event.objects.filter(day=date),
+            'events': Event.objects.filter(day=today.id),
             'currentYear': datetime.now().year
         }
         return render(request,'day/index.html', context=data)

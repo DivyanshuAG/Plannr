@@ -9,8 +9,8 @@ from django.urls import reverse
 class Event(models.Model): 
     title = models.CharField(max_length=200)
     description = models.TextField()
-    start_time = models.DateTimeField(null=True)
-    end_time = models.DateTimeField(null=True)
+    start_time = models.TimeField(null=True)
+    end_time = models.TimeField(null=True)
 
     owner_id = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     day = models.ForeignKey(Day, on_delete=models.CASCADE)
