@@ -20,13 +20,13 @@ can also route to ``http://localhost:8000/month/july/1`` to get a specific view 
 # Todo
 
 
-* [0] fix today day being on every month
-* [0] interaction, in some way shape or form
-* [0] design the event creator page forms thing
-* [0] design the specific day view
-* [0] inbox view
-* [0] landing page view
-* [0] authenticate routes
+* [ ] fix today day being on every month
+* [ ] interaction, in some way shape or form
+* [ ] design the event creator page forms thing
+* [ ] design the specific day view
+* [ ] inbox view
+* [ ] landing page view
+* [ ] authenticate routes
 * [x] make a database schema
 * [x] url router
 * [x] basic template for devving
@@ -36,8 +36,8 @@ can also route to ``http://localhost:8000/month/july/1`` to get a specific view 
 * [x] Designing the Calendar views
 * [x] making them reroute dynamically
 * [x] Automatic routing to this the current month
-* [0] converter from input data to Datetime objects(?)
+* [ ] converter from input data to Datetime objects(?)
 * [x] clean up the admin page
-* [0] make a landing page
+* [ ] make a landing page
 * [x] login and user authentication
-* [0] read / write authentication 
+* [ ] read / write authentication 
