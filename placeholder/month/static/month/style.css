@@ -458,3 +458,16 @@ form input:focus {
 .exception-container h1{
 	font-family: 'Lora', serif;
 }
+
+.not{
+	font-size: 0.85rem;
+	color: #2e2e2e;
+	margin-top: 10px;
+}
+.not a{
+	color: #2e2e2e;
+}
+.not i:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
